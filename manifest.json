@@ -7,8 +7,8 @@
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#001F3F",
-  "theme_color": "#001F3F",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
   "dir": "ltr",
   "lang": "en",
   "launch_handler": {
@@ -29,9 +29,6 @@
       "type": "image/png"
     }
   ],
-  "categories": ["education", "utilities"],
-  "iarc_rating_id": "e1234567890",  // optional placeholder
-  "prefer_related_applications": false,
-  "related_applications": [],
-  "scope_extensions": []
+  "categories": ["education", "utilities"]
 }
+
