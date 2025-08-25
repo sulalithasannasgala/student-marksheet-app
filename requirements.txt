@@ -1,0 +1,8 @@
+streamlit>=1.30.0
+pandas>=2.0.0
+
+# Optional features
+fpdf2>=2.7.5         # For PDF generation (lightweight)
+reportlab>=3.6.12    # Alternative PDF library (more control)
+openpyxl>=3.1.2      # For reading/writing Excel files
+
