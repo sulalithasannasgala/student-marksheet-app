@@ -1,0 +1,25 @@
+{
+  "name": "Student Marksheet App",
+  "short_name": "Marksheet",
+  "id": "com.woodbuldozer.marksheet",
+  "description": "A streamlined marksheet app for Sri Lankan schools, built with Streamlit.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#001F3F",
+  "theme_color": "#001F3F",
+  "dir": "ltr",
+  "lang": "en",
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+  "screenshots": [
+    {
+      "src": "https://raw.githubusercontent.com/sulalithasannasgala/student-marksheet-app/main/Captu222.PNG",
+      "sizes": "1280x720",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["education", "utilities"]
+}
