@@ -29,6 +29,10 @@
       "type": "image/png"
     }
   ],
-  "categories": ["education", "utilities"]
+  "categories": ["education", "utilities"],
+  "iarc_rating_id": "e1234567890",  // optional placeholder
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "scope_extensions": []
 }
 
