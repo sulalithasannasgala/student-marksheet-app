@@ -14,7 +14,6 @@
   "launch_handler": {
     "client_mode": "focus-existing"
   },
-  "orientation": "portrait-primary",
   "icons": [
     {
       "src": "https://raw.githubusercontent.com/sulalithasannasgala/student-marksheet-app/main/icon-512.png",
@@ -31,7 +30,7 @@
     }
   ],
   "categories": ["education", "utilities"],
-  "iarc_rating_id": "e1234567890",  // optional placeholder
+  "iarc_rating_id": "e1234567890",
   "prefer_related_applications": false,
   "related_applications": [],
   "scope_extensions": []
