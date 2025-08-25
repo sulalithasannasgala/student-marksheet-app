@@ -6,6 +6,7 @@
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
   "orientation": "portrait-primary",
   "background_color": "#FFFFFF",
   "theme_color": "#FFFFFF",
@@ -16,23 +17,29 @@
   },
   "icons": [
     {
-      "src": "https://raw.githubusercontent.com/sulalithasannasgala/student-marksheet-app/main/icon-512.png",
+      "src": "https://raw.githubusercontent.com/sulalithasannasgala/student-marksheet-app/main/op_20250825_110323.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     }
   ],
   "screenshots": [
     {
       "src": "https://raw.githubusercontent.com/sulalithasannasgala/student-marksheet-app/main/Captu222.PNG",
       "sizes": "1280x720",
-      "type": "image/png"
+      "type": "image/png",
+      "label": "Marksheet Entry Screen"
     }
   ],
   "categories": ["education", "utilities"],
   "iarc_rating_id": "e1234567890",
   "prefer_related_applications": false,
   "related_applications": [],
-  "scope_extensions": []
+  "scope_extensions": [],
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
 }
+
+
 
