@@ -1,10 +1,14 @@
 import streamlit as st
+import pandas as pd
+from fpdf import FPDF
+from io import BytesIO
 
+# Inject manifest and service worker
 st.markdown("""
-<link rel="manifest" href="/manifest.json">
+<link rel="manifest" href="https://raw.githubusercontent.com/sulalithasannasgala/student-marksheet-app/main/manifest.json">
 <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
+    navigator.serviceWorker.register("https://raw.githubusercontent.com/sulalithasannasgala/student-marksheet-app/main/sw.js")
     .then(function(registration) {
       console.log('✅ Service Worker registered with scope:', registration.scope);
     })
@@ -14,11 +18,6 @@ st.markdown("""
   }
 </script>
 """, unsafe_allow_html=True)
-
-import streamlit as st
-import pandas as pd
-from fpdf import FPDF
-from io import BytesIO
 
 # Initialize session state
 if 'data' not in st.session_state:
@@ -34,26 +33,27 @@ if 'submitted' not in st.session_state:
 def generate_pdf(df):
     pdf = FPDF()
     pdf.add_page()
-    pdf.set_font("Arial", size=10)
+    pdf.set_font("Arial", size=8)
+    col_width = pdf.w / len(df.columns) - 2
     pdf.cell(200, 10, txt="Student Marksheet Report", ln=True, align='C')
     pdf.ln(10)
 
-    # Header row
+    # Header
     for col in df.columns:
-        pdf.cell(20, 10, txt=str(col), border=1)
+        pdf.cell(col_width, 10, txt=str(col), border=1)
     pdf.ln()
 
-    # Data rows
+    # Rows
     for _, row in df.iterrows():
         for item in row:
-            pdf.cell(20, 10, txt=str(item), border=1)
+            pdf.cell(col_width, 10, txt=str(item), border=1)
         pdf.ln()
 
     buffer = BytesIO()
     pdf.output(buffer)
     return buffer.getvalue()
 
-# Title
+# App title
 st.title("📘 Student Marksheet App with PDF Export")
 
 # Entry form
@@ -63,7 +63,10 @@ if not st.session_state.submitted:
         subjects = [st.text_input(f"Subject {i+1}") for i in range(10)]
         submitted = st.form_submit_button("Submit")
 
-        if submitted and name:
+        if submitted:
+            if not name.strip():
+                st.error("❌ Student name cannot be empty.")
+                st.stop()
             try:
                 marks = [float(m) if m.strip() else 0.0 for m in subjects]
             except ValueError:
