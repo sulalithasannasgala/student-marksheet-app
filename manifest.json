@@ -14,6 +14,14 @@
   "launch_handler": {
     "client_mode": "focus-existing"
   },
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/sulalithasannasgala/student-marksheet-app/main/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
   "screenshots": [
     {
       "src": "https://raw.githubusercontent.com/sulalithasannasgala/student-marksheet-app/main/Captu222.PNG",
@@ -21,5 +29,9 @@
       "type": "image/png"
     }
   ],
-  "categories": ["education", "utilities"]
+  "categories": ["education", "utilities"],
+  "iarc_rating_id": "e1234567890",  // optional placeholder
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "scope_extensions": []
 }
